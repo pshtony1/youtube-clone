@@ -41,6 +41,7 @@
     "postcss": "^8.1.2",
     "postcss-loader": "^4.0.3",
     "pug": "^2.0.3",
+    "request": "^2.88.2",
     "sass-loader": "^7.1.0",
     "shx": "^0.3.2",
     "undefsafe": "^2.0.3",
