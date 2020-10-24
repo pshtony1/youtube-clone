@@ -24,11 +24,7 @@ const multerAvatar = multer({
   }),
 });
 
-export const uploadVideo = () => {
-  console.log("wow");
-  multerVideo.single("videoFile");
-  console.log("wow");
-};
+export const uploadVideo = multerVideo.single("videoFile");
 export const uploadAvatar = multerAvatar.single("avatar");
 
 export const localsMiddleware = (req, res, next) => {
