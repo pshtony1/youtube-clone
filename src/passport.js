@@ -17,7 +17,7 @@ passport.use(
       clientSecret: process.env.GH_SECRET,
       callbackURL: process.env.PRODUCTION
         ? `https://tranquil-castle-40182.herokuapp.com${routes.githubCallback}`
-        : `http://localhost:4000${routes.githubCallback}`
+        : `http://localhost:4000${routes.githubCallback}`,
       scope: "user:email",
     },
     githubLoginCallback
