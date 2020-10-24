@@ -49,7 +49,7 @@
     "tunnel": "lt --port 4000",
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prebuild": "rm -rf build",
+    "prebuild": "rd /s \"build\"",
     "start": "node build/init.js",
     "prestart": "npm run build"
   },
