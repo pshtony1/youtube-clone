@@ -1,0 +1,48 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    .videos
+        each video in videos
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })
+            +videoBlock({
+                id: video.id,
+                title: video.title,
+                views: video.views,
+                videoFile: video.fileUrl,
+                userAvatar: video.userAvatar
+            })

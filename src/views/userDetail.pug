@@ -1,0 +1,62 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    .user__profile
+        .user__profile-avatar
+            img.user-avatar(src=user.avatarUrl)
+        .user__profile-info
+            span.user__profile-name= user.name
+            span.user__profile-email= user.email
+
+        a(href=`/users${routes.editProfile}`)
+            i.fas.fa-cog#user-setting(title="Settings")
+
+    span.user__subtitle Your Videos
+
+    .user__videos
+        .videos
+            if (userVideos.length === 0) 
+                span Upload your Video.
+            
+            else
+                each video in userVideos
+                    +videoBlock({
+                        id: video.id,
+                        title: video.title,
+                        views: video.views,
+                        videoFile: video.fileUrl,
+                        userAvatar: video.userAvatar
+                    })
+
+                    +videoBlock({
+                        id: video.id,
+                        title: video.title,
+                        views: video.views,
+                        videoFile: video.fileUrl,
+                        userAvatar: video.userAvatar
+                    })
+
+                    +videoBlock({
+                        id: video.id,
+                        title: video.title,
+                        views: video.views,
+                        videoFile: video.fileUrl,
+                        userAvatar: video.userAvatar
+                    })
+
+                    +videoBlock({
+                        id: video.id,
+                        title: video.title,
+                        views: video.views,
+                        videoFile: video.fileUrl,
+                        userAvatar: video.userAvatar
+                    })
+
+                    +videoBlock({
+                        id: video.id,
+                        title: video.title,
+                        views: video.views,
+                        videoFile: video.fileUrl,
+                        userAvatar: video.userAvatar
+                    })

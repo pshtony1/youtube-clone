@@ -1,0 +1,28 @@
+extends layouts/main
+
+block content
+    .ancestor-container-two
+        .form-container.record-form
+            .upload-header
+                h3 Record Video
+            .record-container#jsRecordContainer
+                video#jsVideoPreview
+                .record-btn-container
+                    button#jsRecordBtn
+                        i.fas.fa-circle
+                    button#jsPauseBtn
+                        i.fas.fa-pause
+
+        .form-container.upload-form
+            form(action=routes.videos + routes.upload, method="post" enctype="multipart/form-data")
+                .upload-header
+                    h3 Upload Video
+
+                label.not-uploaded#fileLabel(for="file")
+                    i.far.fa-file-video#fileLabelIcon
+                    span#fileLabelSpan Upload Your Video
+                input(type="file" id="file", name="videoFile", required=true, accept="video/*")
+                    
+                input(id="video-title-input" type="text", placeholder="Title", name="title", required=true)
+                textarea(spellcheck="false" name="description", placeholder="Description", required=true)
+                input(type="submit", value="Upload Video")

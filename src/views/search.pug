@@ -1,0 +1,19 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    .search__header
+        p Searching for: #{searchingBy}
+
+    .search__videos
+        if videos.length == 0
+            h3 No Videos Found
+        
+        .videos
+            each video in videos
+                +videoBlock({
+                    title: video.title,
+                    views: video.views,
+                    videoFile: video.fileUrl,
+                    id: video.id
+                })

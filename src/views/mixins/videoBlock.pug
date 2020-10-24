@@ -1,0 +1,17 @@
+mixin videoBlock(video = {})
+    .videoBlock
+        .videoBlock__hover-container
+            a(href=routes.videoDetail(video.id))
+                video.videoBlock__thumbnail(src=video.videoFile)
+            .videoBlock__info
+                .videoBlock__user-circle
+                    img.user-avatar(src=video.userAvatar)
+
+                .videoBlock__video-infos
+                    a(href=routes.videoDetail(video.id))
+                        span.videoBlock__title= video.title
+                        if (video.views === 1)
+                            span.videoBlock__views #{video.views} view
+
+                        else 
+                            span.videoBlock__views #{video.views} views

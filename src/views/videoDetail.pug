@@ -1,0 +1,67 @@
+extends layouts/main
+include mixins/videoPlayer
+
+block content
+    .ancestor-video-container
+        +videoPlayer({
+            src: video.fileUrl
+        })
+        
+        .video__info
+            h5.video__title= video.title
+
+            .video__semi-info-container
+                .semi-infos 
+                    if video.views === 1
+                        span.video__views 1 view
+                    else
+                        span.video__views #{video.views} views
+
+                    span.video__dot •
+
+                    span.video__createAt #{createdAt}
+
+                .video__btns
+                    span.video__btn-container
+                        span#video__hidden-id #{video.id}
+                        button#video-editBtn(title="Edit Video")
+                            i.fas.fa-edit
+
+        .video__creator-description-container
+            .video__creator-container
+                .video__creator-circle
+                    img.user-avatar(src=uploadUser.avatarUrl)
+                a(href=routes.userDetail(uploadUser._id))
+                    span.video__creator-name= uploadUser.name
+
+            pre.video__description.hide= video.description
+            
+            span.video__desc-btn More
+        
+        .video__comments
+            .video__comments-header
+                if video.comments.length === 1
+                    span.video__comment-number
+                        span#jsCommentNumber 1
+                        |  comment
+                else
+                    span.video__comment-number
+                        span#jsCommentNumber #{video.comments.length}
+                        |  comments
+
+                form.add__comment#jsAddComment
+                    .comment-user-circle
+                        if (user)
+                            img.user-avatar(src=user.avatarUrl)
+                        else 
+                            img.user-avatar(src="https://www.flaticon.com/svg/static/icons/svg/3064/3064559.svg")
+                    
+                    if (user)
+                        input(type="text", placeholder="Add a Comment")
+                    else
+                        span.check-user-comment Please Login for Add Comment
+
+            ul.video__comments-list#jsCommentList
+                each comment in video.comments.reverse()
+                    li
+                        span= comment.text

@@ -1,0 +1,20 @@
+extends layouts/main
+
+block content
+    .form-container.join-form
+        .youtube-form-header
+            i.fab.fa-youtube
+            span.title Wetube
+
+        .login-title 
+            span.head-title Create Your Wetube Account
+            span.sub-title Continue to Wetube
+
+        form(action=routes.join, method="post")
+            input(type="text", name="name", placeholder="Full Name", required=true autofocus)
+            input(type="email", name="email", placeholder="email", required=true)
+            input(type="password", name="password", placeholder="password", required=true)
+            input(type="password", name="password2", placeholder="Verify password", required=true)
+            input(type="submit", value="Join Now")
+
+        include partials/socialLogin

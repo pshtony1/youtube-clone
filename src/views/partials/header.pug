@@ -1,0 +1,65 @@
+header.header
+    .header__column
+        i.fas.fa-bars
+
+    .header__column
+        a.home-link(href=routes.home)
+            i.fab.fa-youtube
+            span.title Wetube
+
+    .header__column
+        form(action=routes.search, method="get")
+            .search-container
+                input.search-bar(type="text", placeholder="Search", name="term")
+                i.fas.fa-keyboard
+            button.search-btn
+                i.fas.fa-search
+
+    .header__column
+        .media-search-icon
+            i.fas.fa-search
+
+        if !user
+            a.login-container(href=routes.login)
+                i.fas.fa-user-circle
+                span Sign in
+
+        else
+            a(href=routes.videos + routes.upload, title="Upload")
+                i.fas.fa-file-upload
+            .header-profile-circle
+                img.user-avatar(src=user.avatarUrl)
+
+            .profile-info.no-active
+                .mini-profile
+                    .mini-profile-outer
+                        .mini-profile-circle
+                            img.user-avatar(src=user.avatarUrl)
+
+                    .mini-profile-info
+                        span= user.name
+                        span= user.email
+
+                .profile-menu
+                    a.profile-menu__row.profile(href=routes.me)
+                        i.fas.fa-user-circle
+                        span My Profile
+                    a.profile-menu__row.logout(href=routes.logout)
+                        i.fas.fa-sign-out-alt
+                        span Logout
+                    .profile-menu__row.darkmode
+                        i.fas.fa-adjust
+                        span Theme
+                        span.current-theme Light
+
+
+    .media-search-container.no-active
+        .go-back
+            i.fas.fa-arrow-left
+
+        form.media-search-form(action=routes.search, method="get")
+            .media-search-box
+                input.search-bar(type="text", placeholder="Search", name="term")
+                i.fas.fa-keyboard
+            button.media-search-btn
+                i.fas.fa-search
