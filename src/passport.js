@@ -8,10 +8,6 @@ import {
 import User from "./models/User";
 import routes from "./routes";
 
-import dotenv from "dotenv";
-
-dotenv.config();
-
 passport.use(User.createStrategy());
 
 passport.use(
