@@ -7,7 +7,6 @@ const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
 const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
-  devtool: "cheap-module-source-map",
   entry: ["@babel/polyfill", ENTRY_FILE],
   mode: MODE,
   module: {
@@ -29,10 +28,8 @@ const config = {
           {
             loader: "postcss-loader",
             options: {
-              postcssOptions: {
-                plugins() {
-                  return [autoprefixer({ browsers: "cover 99.5%" })];
-                },
+              plugins() {
+                return [autoprefixer({ overrideBrowserslist: "cover 99.5%" })];
               },
             },
           },
