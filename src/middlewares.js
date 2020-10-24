@@ -27,6 +27,7 @@ const multerAvatar = multer({
 export const uploadVideo = () => {
   console.log("wow");
   multerVideo.single("videoFile");
+  console.log("wow");
 };
 export const uploadAvatar = multerAvatar.single("avatar");
 
