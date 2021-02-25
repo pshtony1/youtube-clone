@@ -1,14 +1,13 @@
 const path = require("path");
-
-// const ExtractCSS = require("extract-text-webpack-plugin");
-const MiniExtractCSS = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const MODE = process.env.WEBPACK_ENV;
 const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
 const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
+  devtool: "cheap-module-source-map",
   entry: ["@babel/polyfill", ENTRY_FILE],
   mode: MODE,
   module: {
@@ -22,29 +21,32 @@ const config = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss)$/,
         use: [
           {
-            loader: MiniExtractCSS.loader,
-            options: {
-              hmr: process.env.WEBPACK_ENV === "development",
-            },
+            loader: MiniCssExtractPlugin.loader,
           },
-          "css-loader",
+          {
+            loader: "css-loader",
+          },
           {
             loader: "postcss-loader",
             options: {
-              plugins() {
-                return [
-                  autoprefixer({
-                    overrideBrowserslist: "cover 99.5%",
-                  }),
-                ];
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      overrideBrowserslist: "cover 99.5%",
+                    },
+                  ],
+                ],
               },
             },
           },
-
-          "sass-loader",
+          {
+            loader: "sass-loader",
+          },
         ],
       },
     ],
@@ -54,7 +56,9 @@ const config = {
     filename: "[name].js",
   },
   plugins: [
-    new MiniExtractCSS({
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
       filename: "styles.css",
     }),
   ],
