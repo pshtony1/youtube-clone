@@ -8,7 +8,7 @@
 
 ---
 
-Youtube Clone with `VanillaJS`, `NodeJS`, `ExpressJS`, `Pug`, `MongoDB`, `Webpack`
+<br />
 
 ## 1. 프로젝트에서 느낀 것
 - **Front-End**
@@ -30,7 +30,20 @@ Youtube Clone with `VanillaJS`, `NodeJS`, `ExpressJS`, `Pug`, `MongoDB`, `Webpac
 - **Deploy**
   - Photo, Video 저장을 위해 `AWS S3`를 사용했다. 파일 저장하는데 있어서는 최고의 서비스인것 같다! ~무엇보다도 저렴하다~
   - 나머지 Comment, User 정보 등은 `MongoDB Atlas`를 사용했는데, JS 세팅에서 정말 애먹었다. 😭
-  - 배포 자체는 `Heroku`를 이용했다. `Github`처럼 이용하면 되었기에 간단했다!
+  - 배포 자체는 `Heroku`를 이용했다. `Github`처럼 이용하면 되었기에 간단한줄 알았으나...
+  - 기존에 세팅해두었던 `Webpack`과 `Babel`이 말썽이었다. 해당 패키지들의 버전이 가장 큰 문제점이었다. 프로젝트 과정에서 해결하는데 제일 힘들었던 부분이었다.
+
+<br />
+
+## 2. 스택
+정말 많은 3rd-party들을 사용했지만, 프로젝트에 있어서 주축이 되었던 친구들만 소개했다.
+
+- `Vanilla JS`
+- [`Node.js`](https://nodejs.org/)
+- [`Express.js`](https://expressjs.com/)
+- [`Pug`](https://pugjs.org/)
+- [`MongoDB`](https://www.mongodb.com/)
+- [`Webpack`](https://webpack.js.org/)
 
 ## Pages
 
