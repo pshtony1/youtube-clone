@@ -38,7 +38,7 @@
 <br />
 
 ## 2. 스택
-정말 많은 3rd-party들을 사용했지만, 프로젝트에 있어서 주축이 되었던 친구들만 소개했다.
+[정말 많은 3rd-party들을 사용했지만](https://github.com/pshtony1/youtube-clone/blob/master/package.json#L9), 프로젝트에 있어서 주축이 되었던 친구들만 소개했다.
 
 - `Vanilla JS`
 - [`Node.js`](https://nodejs.org/)
@@ -47,66 +47,32 @@
 - [`MongoDB`](https://www.mongodb.com/)
 - [`Webpack`](https://webpack.js.org/)
 
-## Pages
+이 경험을 살려 [`MERN` 스택](https://www.mongodb.com/mern-stack) 또는 [`MEAN` 스택](https://en.wikipedia.org/wiki/MEAN_(solution_stack)) 프로젝트에 도전해보고싶다!
 
-- [x] Home
-- [x] Join
-- [x] Login
-- [x] Search
-- [x] User Detail
-- [x] Edit Profile
-- [x] Change Password
-- [x] Upload
-- [x] Video Detail
-- [x] Edit Video
+**+ `MVC Pattern`을 사용해 프로젝트를 진행했다.**
 
-## Todo List
+<br />
 
-- [x] ~_Study little_ **`NodeJS`**~ **(Complete)**
+## 3. 기능
+유튜브의 최소 핵심기능들은 전부 구현했다.
 
-- [x] ~_Using_ **`Babel`** _for_ **`ES6`**~ **(Complete)**
+### 3-1. 계정
+- 회원가입
+- 로그인
+- 소셜로그인(`Github`, ~`Facebook`~)
 
-- [ ] Study and Using **`ExpressJS`**
+### 3-2. 영상
+- 자체 영상 촬영 기능
+- 영상 업로드
+- 업로드한 영상 수정 및 삭제
+- 영상 검색
 
-  - [x] ~_Routers_~ **(Complete)**
-  - [x] ~_Middlewares_~ **(Complete)**
-  - [x] ~_Study and Using_ **`Pug`**~ **(Complete)**
-    - [x] ~_Layouts_~ **(Complete)**
-    - [x] ~_Partials_~ **(Complete)**
-    - [x] ~_Local Variables_~ **(Complete)**
-    - [x] ~_Template Variables_~ **(Complete)**
-  - [ ] Study and Using **`MVC Pattern`**
-    - [x] ~_Make Frame of Model_~ **(Complete)**
-    - [x] ~_Make Frame of View_~ **(Complete)**
-    - [x] ~_Make Frame of Controller_~ **(Complete)**
-    - [ ] Complete creating Model
-    - [x] ~_Complete creating View_~ **(Complete)**
-    - [ ] Complete creating Controller
-  - [ ] Session for Login
+### 3-3. 동영상 시청
+- 커스텀 영상 플레이어
+- 조회수 기능
+- 댓글 기능
 
-- [x] ~_Study and Using_~ **`MongoDB`** **(Complete)**
-
-  - [x] ~_Connect to `MongoDB`_~ **(Complete)**
-  - [x] ~_Upload & Create Video_~ **(Complete)**
-  - [x] ~_Delete Video_~ **(Complete)**
-  - [x] ~_Search Video Using Regular Expression_~ **(Complete)**
-
-- [x] Study and Using **`Webpack`**
-
-  - [x] What is `Webpack`???
-  - [x] Apply `Webpack` to Project
-
-- [x] User Authentication (maybe **`PassportJS`**)
-  - [x] Github Login
-  - [x] Facebook Login
-- [x] Custom Video Player
-  - [x] Play / Pause
-  - [x] Mute / Unmute
-  - [x] Fullscreen
-  - [x] Timestamp
-  - [x] Volume Bar
-- [x] Video Recording
-
-- [x] Comment
-
-- [x] **PUBLISH!!**
+### 3-4. 유저
+- 유저 프로필 기능(업로드한 영상 등)
+- 프로필 수정
+- 비밀번호 변경
